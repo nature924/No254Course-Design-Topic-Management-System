@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ZiniketiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ZiniketiEntity" id="ziniketiMap">
+        <result property="ketimingcheng" column="ketimingcheng"/>
+        <result property="ketifenlei" column="ketifenlei"/>
+        <result property="tupian" column="tupian"/>
+        <result property="fujian" column="fujian"/>
+        <result property="shipin" column="shipin"/>
+        <result property="nanyichengdu" column="nanyichengdu"/>
+        <result property="jiaoshigonghao" column="jiaoshigonghao"/>
+        <result property="jiaoshixingming" column="jiaoshixingming"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="xueshengxingming" column="xueshengxingming"/>
+        <result property="banji" column="banji"/>
+        <result property="zhuanye" column="zhuanye"/>
+        <result property="riqi" column="riqi"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ZiniketiVO" >
+		SELECT * FROM ziniketi  ziniketi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ZiniketiVO" >
+		SELECT  ziniketi.* FROM ziniketi  ziniketi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ZiniketiView" >
+
+		SELECT  ziniketi.* FROM ziniketi  ziniketi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ZiniketiView" >
+		SELECT * FROM ziniketi  ziniketi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
